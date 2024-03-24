@@ -18,9 +18,12 @@ pub fn build(b: *std.build.Builder) void {
         "-g",
     });
 
-    lib.installHeader("hiredis.h", "hiredis.h");
-    lib.installHeader("read.h", "read.h");
-    lib.installHeader("sds.h", "sds.h");
     lib.installHeader("alloc.h", "alloc.h");
+    lib.installHeader("net.h", "net.h");
+    lib.installHeader("hiredis.h", "hiredis.h");
+    lib.installHeader("sds.h", "sds.h");
+    lib.installHeader("async.h", "async.h");
+    lib.installHeader("read.h", "read.h");
+    lib.installHeader("sockcompat.h", "sockcompat.h");
     b.installArtifact(lib);
 }
