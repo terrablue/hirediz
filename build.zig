@@ -10,11 +10,14 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
     lib.linkLibC();
-    lib.addCSourceFiles(&.{ "alloc.c", "net.c", "hiredis.c", "sds.c", "async.c", "read.c", "sockcompat.c" }, &.{
-        "-std=c99",
-        "-Wall",
-        "-Os",
-        "-g",
+    lib.addCSourceFiles(.{
+        .files = &.{ "alloc.c", "net.c", "hiredis.c", "sds.c", "async.c", "read.c", "sockcompat.c" },
+        .flags = &.{
+            "-std=c99",
+            "-Wall",
+            "-Os",
+            "-g",
+        },
     });
 
     lib.installHeader("alloc.h", "alloc.h");
