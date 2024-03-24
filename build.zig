@@ -11,7 +11,7 @@ pub fn build(b: *std.build.Builder) void {
         .optimize = optimize,
     });
     lib.linkLibC();
-    lib.addCSourceFiles(&.{"hiredis.c"}, &.{
+    lib.addCSourceFiles(&.{ "alloc.c", "net.c", "hiredis.c", "sds.c", "async.c", "read.c", "sockcompat.c" }, &.{
         "-std=c99",
         "-Wall",
         "-Os",
