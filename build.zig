@@ -20,5 +20,7 @@ pub fn build(b: *std.build.Builder) void {
 
     lib.installHeader("hiredis.h", "hiredis.h");
     lib.installHeader("read.h", "read.h");
+    lib.installHeader("sdh.h", "sdh.h");
+    lib.installHeader("alloc.h", "alloc.h");
     b.installArtifact(lib);
 }
